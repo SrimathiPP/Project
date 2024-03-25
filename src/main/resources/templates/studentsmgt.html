@@ -1,0 +1,74 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/SchoolStyle.css}">
+    <title>After School</title>
+</head>
+<body>
+<header>
+
+    <h1>Welcome to Student Management Page</h1>
+    <nav>
+        <ul>
+            <li ><a th:href="@{/students}">Students</a>
+                 <li><a th:href="@{/login}">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div><br>
+    <a th:href="@{/students/studentmgt/add}" class="btn btn-primary">
+        Add Student</a>
+</div>
+<br>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Mother Name</th>
+        <th>Father Name</th>
+        <th>Mother Phone No</th>
+        <th>Father Phone No</th>
+        <th>DOB</th>
+        <th>Grade</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Medical Concerns</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="student: ${students}">
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.motherName}"></td>
+        <td th:text="${student.fatherName}"></td>
+        <td th:text="${student.m_contactNo}"></td>
+        <td th:text="${student.f_contactNo}"></td>
+        <td th:text="${student.DOB}"></td>
+        <td th:text="${student.grade}"></td>
+        <td th:text="${student.address}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.medicalConcerns}"></td>
+
+       <td><a
+                th:href="@{/students/studentmgt/update/{id}(id=${student.studentId})}"
+                class="btn btn-primary">Update</a> <a
+                th:href="@{/students/studentmgt/{id}(id=${student.studentId})}"
+                class="btn btn-danger">Delete</a></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

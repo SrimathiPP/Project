@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent Registration</title>
+</head>
+<body>
+<h1>Parent Registration</h1>
+<form th:action="@{/parents/register}" th:object="${parent}" method="post">
+    <div>
+        <label for="parentName">Parent Name:</label>
+        <input type="text" id="parentName" th:field="*{parentName}" required>
+    </div>
+    <div>
+        <label for="childName">Parent Name:</label>
+        <input type="text" id="childName" th:field="*{childName}" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required>
+    </div>
+    <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" th:field="*{phone}" required>
+    </div>
+    <div>
+        <button type="submit">Register</button>
+    </div>
+</form>
+</body>
+</html>

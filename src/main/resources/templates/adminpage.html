@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/SchoolStyle.css">
+    <title>After School</title>
+</head>
+<body>
+<header>
+
+    <h1>Welcome to Admin Page</h1>
+    <nav>
+        <ul>
+            <li class="dropdown"><a href="javascript:void(0)"  class="dropbtn">Students</a>
+                <div class="dropdown-content">
+                    <a th:href="Students.html">Add new Student</a>
+                    <a th:href="EditStudent.html ">Edit Student</a>
+
+                </div></li>
+            <li><a th:href="Attendance.html">Attendance</a></li>
+            <li><a th:href="activities.html">Activities</a></li>
+            <li><a th:href="adminlogin.html">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <img th:src="@{/img/ScheduleImage.png}" height="400px" width="=1000px">
+
+</section>
+
+
+<footer>
+    <p>After School Program</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/SchoolStyle.css}">
+    <title>After School</title>
+</head>
+<body>
+<header>
+
+    <h1>Welcome to Teacher Page</h1>
+    <nav>
+        <ul>
+            <li ><a th:href="@{/students/studentmgt}">Students</a>
+            <li><a th:href="@{/attendance}">Attendance</a></li>
+            <li><a th:href="@{/activities}">Activities</a></li>
+            <li><a th:href="@{/login}">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <img th:src="@{/img/ScheduleImage.png}" height="50%" width="80%"/>
+
+</section>
+</body>
+</html>

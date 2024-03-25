@@ -1,0 +1,97 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/SchoolStyle.css">
+    <title>After School</title>
+</head>
+<body>
+<header>
+
+    <h1>Welcome to Teacher Page</h1>
+    <nav>
+        <ul>
+            <li ><a th:href="@{/students/studentmgt}">Students</a>
+            <li><a th:href="@{/attendance}">Attendance</a></li>
+            <li><a th:href="@{/activities}">Activities</a></li>
+            <li><a th:href="@{/login}">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <h2>Edit Student Details</h2>
+        <form th:action="@{/students/studentmgt/save/{id} (id=${student.studentId})}" th:object = "${student}" method="POST">
+            <div class ="form-group">
+                <label >First Name :</label>
+                <input type="text" th:field="*{firstName}" name="studentFirstName" required><br><br>
+                <label >Last Name:</label>
+                <input type="text" th:field="*{lastName}" name="studentLastName" required><br><br>
+                <label >Father's Name:</label>
+                <input type="text" th:field="*{fatherName}" name="fatherName" required><br><br>
+                <label >Mother's Name:</label>
+                <input type="text" th:field="*{motherName}" name="motherName" required><br><br>
+                <label >Email :</label>
+                <input type="text" th:field="*{email}" name="email" required><br><br>
+                <label >Child's Grade:</label>
+                <select th:field="*{grade}" name="grade" required><br><br>
+                    <option value="" disabled selected>Select Grade :</option>
+                    <option value="pre-k">Pre-K</option>
+                    <option value="kindergarten">Kindergarten</option>
+                    <option value="1st">1st Grade</option>
+                    <option value="2nd">2nd Grade</option>
+                    <option value="3rd">3rd Grade</option>
+                    <option value="4th">4th Grade</option>
+                    <option value="5th">5th Grade</option>
+                    <option value="6th">6thGrade</option>
+                    <option value="7th">7th Grade</option>
+                    <option value="8th">8th Grade</option>
+                </select>
+                <label >Date of Birth :</label>
+                <input type="date" th:field="*{DOB}" name="DOB" required><br><br>
+                <!--   <label >Gender:</label>
+                  <input type="text" th:field="*{gender}" name="gender" value="female">-->
+                   <div>
+                        <label >Male</label>
+                        <input type="radio" th:field="*{gender}" name="gender" value="male">
+                        <br>
+
+                        <label >Female</label>
+                        <input type="radio" th:field="*{gender}" name="gender" value="female">
+                        <br>
+                        <br>
+                    </div>
+                <label>Address:</label>
+                <input type="text" th:field="*{address}" name="address" required><br><br>
+                <label >Contact No(F):</label>
+                <input type="text" th:field="*{f_contactNo}" name="fPhoneNo" required><br><br>
+                <label >Contact No(M):</label>
+                <input type="text" th:field="*{m_contactNo}" name="mPhoneNo" required><br><br>
+                <label >Medical concern:</label>
+                <input type="text" th:field="*{medicalConcerns}" name="medicalconcern" ><br><br>
+
+                <button type="submit">Update</button>
+                <button type="button" onclick="hideAddStudentForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+<script>
+    function showEditStudentForm() {
+        document.getElementById("editStudentForm").style.display = "block";
+    }
+
+    function hideAddStudentForm() {
+        document.getElementById("addStudentForm").style.display = "none";
+    }
+
+    function editStudentForm(studentId) {
+        // Implement logic to edit student information
+        //alert("Edit student with ID: " + studentId);
+        function showEditStudentForm() {
+            document.getElementById("editStudentForm").style.display = "block";
+        }
+    }
+</script>
